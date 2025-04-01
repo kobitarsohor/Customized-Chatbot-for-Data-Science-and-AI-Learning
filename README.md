@@ -1,4 +1,6 @@
-# README.md for Customized Chatbot for Data Science and AI Learning
+# Gen AI Project : Customized Chatbot for Data Science and AI Learning
+
+<img width="960" alt="Screenshot 2025-04-02 010040" src="https://github.com/user-attachments/assets/150de5dc-a159-41d0-997a-eaa4393f5ae1" />
 
 ## Overview
 
