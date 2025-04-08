@@ -2,29 +2,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Enter API Key</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enter API Key</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    .center-container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-dark {
+      background-color: #1f1f1f;
+      color: #f1f1f1;
+      border-radius: 10px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    input[type="text"] {
+      background-color: #2a2a2a;
+      color: #fff;
+      border: 1px solid #444;
+    }
+
+    input[type="text"]::placeholder {
+      color: #bbb;
+    }
+
+    .w3-button-grey {
+      background-color: #555 !important;
+      color: white !important;
+    }
+
+    .w3-button-grey:hover {
+      background-color: #777 !important;
+    }
+
+    .info-text {
+      color: #aaa;
+    }
+
+    .api-link {
+      font-size: 0.9em;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .api-link a {
+      color: #4da6ff;
+      text-decoration: none;
+    }
+
+    .api-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Enter Your GROQ API Key</h1>
-        {% if error_message %}
-            <div class="error-message">{{ error_message }}</div> <!-- Display error message -->
-        {% endif %}
-        <form method="POST">  <!-- Ensure method is POST -->
-            <input type="text" name="api_key" placeholder="GROQ API Key" required>
-            <button type="submit">Save</button>
-        </form>
-        <p>After entering your API key, you will be redirected to the chat interface.</p>
-        
-        <!-- <style>
-            .error-message {
-                color: red; /* Red color for error messages */
-                margin-bottom: 10px; /* Space below the message */
-            }
-        </style> -->
+
+  <div class="center-container">
+    <div class="w3-card-4 card-dark">
+      <h2 class="w3-center">Enter Your GROQ API Key</h2>
+
+      <div class="api-link w3-center">
+        Get your GROQ API key <a href="https://console.groq.com/keys" target="_blank">here</a>.
+      </div>
+
+      {% if error_message %}
+        <div class="w3-panel w3-pale-red w3-border w3-border-red w3-round-large w3-margin-top">
+          {{ error_message }}
+        </div>
+      {% endif %}
+
+      <form method="POST" class="w3-container w3-margin-top">
+        <p>
+          <input class="w3-input w3-round-large" type="text" name="api_key" placeholder="GROQ API Key" required />
+        </p>
+        <p class="w3-center">
+          <button class="w3-button w3-button-grey w3-round-large" type="submit">Enter</button>
+        </p>
+      </form>
+
+      <p class="w3-small w3-center info-text">After entering your API key, you will be redirected to the chat interface.</p>
     </div>
+  </div>
+
 </body>
 </html>
